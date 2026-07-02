@@ -7,22 +7,22 @@ url: ${project.url}
 api-version: 1.13
 commands:
    warp:
-      description: Show list of warp, or warp to or warp other people to a warp.
-      usage: /<command> <warp> || /<command> <player> <warp>
+      description: 显示传送点列表，传送到指定传送点，或将其他玩家传送到指定传送点。
+      usage: /<command> <传送点> || /<command> <玩家> <传送点>
       aliases: [ezwarp]
    listwarps:
-      description: Show list of warp, or warp to or warp other people to a warp.
-      usage: /<command> <page>
+      description: 显示所有可用的传送点列表。
+      usage: /<command> <页码>
       aliases: [ezwarplist, listwarp, ezlistwarp, warplist, ezlistwarps, warps, ezwarps]
    setwarp:
-      description: Set a warp at your location.
-      usage: /<command> <warp>
+      description: 在你的当前位置设置一个传送点。
+      usage: /<command> <传送点名称>
       aliases: [ezaddwarp, ezsetwarp, addwarp]
    delwarp:
-      description: Delete warp by name.
-      usage: /<command> <warp>
+      description: 删除指定名称的传送点。
+      usage: /<command> <传送点名称>
       aliases: [ezdeletewarp, ezremovewarp, ezdelwarp, deletewarp, removewarp]
    easywarp:
-      description: General EasyWarp commands.
+      description: EasyWarp 插件通用命令。
       usage: /<command> <help | reload>
       aliases: [ew, ez, ezw]

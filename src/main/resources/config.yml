@@ -2,17 +2,17 @@
 ##  === [ EASY WARP ] === ##
 ############################
 
-# Name displayed in messages sent to player from plugin.
-# ex. [server-name] You have been warped.
-server-name: "&3[&6EasyWarp&3]"
+# 插件发送给玩家的消息中显示的名称
+# 例如：[服务器名称] 你已被传送。
+server-name: "&3[&6便捷传送&3]"
 
-# Delay (in seconds) before a person is warped. (0 for no delay)
+# 传送前的延迟时间（秒），设为 0 表示无延迟
 warp-delay: 10
 
-# Delay (in seconds) before a person can warp again. (0 for no delay)
+# 传送冷却时间（秒），设为 0 表示无冷却
 warp-cooldown: 0
 
-# If enabled, displays a countdown when waiting to warp.
+# 如果启用，等待传送时会显示倒计时
 display-countdown: false
 
 
@@ -21,99 +21,99 @@ display-countdown: false
 #============================================================================================================================#
 
 
-#Variables:
-#{server}
-#{delay}
-#{name}
-#{display}
-#{node}
-#{command}
+#变量说明：
+#{server}  - 服务器名称
+#{delay}   - 延迟时间
+#{name}    - 玩家名称
+#{display} - 显示名称
+#{node}    - 权限节点
+#{command} - 命令名称
+#{page}    - 当前页码
+#{pages}   - 总页数
+#{target}  - 目标玩家
+#{warp}    - 传送点名称
+#{time}    - 时间
 
-#{page}
-#{pages}
-
-#{target}
-
-#Messages to be sent
+#消息内容
 messages:
   warp:
-    other: "{server}&a You have warped &c{target}&a to &c{warp}."
-    cancelled: "&cDelayed warp has been cancelled"
-    completed: "{server}&a You have been warped to &c{warp}."
-    delayed: "{server}&a You will be warped in &c{delay}&a seconds."
-    removed: "{server}&a The warp &c{warp} &ahas been removed."
-    set: "{server}&a The warp &c{warp} &ahas been set."
-    list: "{server}&a Available Warps&c ({page}/{pages})"
-    countdown: "{server}&a You will be warped in &c{time}&a seconds."
-    cooldown: "{server}&a You must wait &c{time}&a before warping again."
+    other: "{server}&a 你已将 &c{target}&a 传送至 &c{warp}&a。"
+    cancelled: "&c传送已被取消"
+    completed: "{server}&a 你已被传送至 &c{warp}&a。"
+    delayed: "{server}&a 你将在 &c{delay}&a 秒后被传送。"
+    removed: "{server}&a 传送点 &c{warp} &a已被移除。"
+    set: "{server}&a 传送点 &c{warp} &a已设置。"
+    list: "{server}&a 可用传送点 &c({page}/{pages})"
+    countdown: "{server}&a 你将在 &c{time}&a 秒后被传送。"
+    cooldown: "{server}&a 你需等待 &c{time}&a 秒后才能再次传送。"
     no-permission:
-    - "&cError: You do not have permission to use this warp."
-    - "&c -> To list available warps, use /warps"
+    - "&c错误：你没有使用此传送点的权限。"
+    - "&c -> 使用 /warps 查看可用传送点"
   error:
-    illegal-char: "&cError: Your warp contains an unusable character."
+    illegal-char: "&c错误：传送点名称包含非法字符。"
     no-warp:
-    - "&cError: This warp does not exist."
-    - "&c -> To list available warps, use /warps"
+    - "&c错误：该传送点不存在。"
+    - "&c -> 使用 /warps 查看可用传送点"
     no-warp-given:
-    - "&cError: /warp <warp> || /warp <player> <warp>"
-    - "&c -> To list available warps, use /warps"
-    no-permission: "&cError: You need the '{node}' permission node to do this."
-    no-page: "&cError: /{command} <page #>"
-    no-player: "&cError: Player not found."
-    not-player: "&cError: You must be a player to do this."
-    cannot-overwrite: "&cError: This warp already exists."
+    - "&c错误：正确用法 /warp <传送点> || /warp <玩家> <传送点>"
+    - "&c -> 使用 /warps 查看可用传送点"
+    no-permission: "&c错误：你需要 '{node}' 权限才能执行此操作。"
+    no-page: "&c错误：正确用法 /{command} <页码>"
+    no-player: "&c错误：未找到该玩家。"
+    not-player: "&c错误：只有玩家才能执行此操作。"
+    cannot-overwrite: "&c错误：该传送点已存在。"
   config:
-    reloaded: "{server}&a Config reloaded."
+    reloaded: "{server}&a 配置文件已重载。"
 
-#Example of multi-lined message
+#多行消息示例
 #  example:
-#  - This line comes first
-#  - Then this one
+#  - 这是第一行
+#  - 这是第二行
 
 
 #============================================================================================================================#
 #============================================================================================================================#
 #============================================================================================================================#
 
-#If set to true, players need permission or OP to use the /warp command
-warp-requires-permissions: false
+#如果设为 true，玩家需要权限或 OP 才能使用 /warp 命令
+warp-requires-permissions: true
 
-#If set to true, players need permission or OP to use the /listwarps command
-listwarps-requires-permissions: false
+#如果设为 true，玩家需要权限或 OP 才能使用 /listwarps 命令
+listwarps-requires-permissions: true
 
-#If set to true, players need permission or OP to use the /set-warp command
+#如果设为 true，玩家需要权限或 OP 才能使用 /set-warp 命令
 setwarp-requires-permissions: true
 
-#If set to true, players need permission or OP to use the /del-warp command
+#如果设为 true，玩家需要权限或 OP 才能使用 /del-warp 命令
 delwarp-requires-permissions: true
 
-#If set to true, players need permission or OP to use the /warp command on others
+#如果设为 true，玩家需要权限或 OP 才能对其他人使用 /warp 命令
 warp-others-requires-permissions: true
 
-# If set to true, a person needs permissions for 'easywarp.warp.<warpname>' to use a warp or 'easywarp.warp.*' to use all warps.
-per-warp-permissions: false
+#如果设为 true，玩家需要 'easywarp.warp.<传送点名称>' 权限才能使用特定传送点，或 'easywarp.warp.*' 使用所有传送点
+per-warp-permissions: true
 
-# If set to true, a person needs permissions for 'easywarp.sign.use' to use warp signs
-signs-require-permissions: false
+#如果设为 true，玩家需要 'easywarp.sign.use' 权限才能使用传送牌子
+signs-require-permissions: true
 
-# If set to true, a person needs per-warp permissions to use warp signs, even if per-warp-permissions is set to false above.
-# It is recommended you leave this 'false'
+#如果设为 true，即使上方的 per-warp-permissions 设为 false，使用传送牌子时仍需要逐传送点权限
+#建议保持为 'false'
 signs-per-warp-permissions: false
 
-# If set to true, a person bypasses any warp delay if they have permissions for 'easywarp.delay.bypass'
-permissions-bypass-delay: false
+#如果设为 true，拥有 'easywarp.delay.bypass' 权限的玩家可以跳过传送延迟
+permissions-bypass-delay: true
 
-# If set to true, a person bypasses any warp delay if they are ops.
-ops-bypass-delay: false
+#如果设为 true，OP 玩家可以跳过传送延迟
+ops-bypass-delay: true
 
-# If set to true, when warping another player (/warp player warp) the player will bypass the delay
+#如果设为 true，传送其他玩家时（/warp 玩家 传送点），目标玩家将跳过延迟
 warp-other-bypass-delay: true
 
-# If set to true, when warping using a sign the player will bypass the delay
+#如果设为 true，使用传送牌子时玩家将跳过延迟
 signs-bypass-delay: true
 
-# If set to true, when warping using a sign the player will bypass the cooldown
-signs-bypass-cooldown: false
+#如果设为 true，使用传送牌子时玩家将跳过冷却时间
+signs-bypass-cooldown: true
 
-# If set to false, you will receive an error when trying to /setwarp an existing warp
-allow-warp-overwrite: false
+#如果设为 false，尝试 /setwarp 设置已存在的传送点时会报错
+allow-warp-overwrite: true
