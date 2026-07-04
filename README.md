@@ -1,1 +1,1 @@
-汉化版easywarp
+汉化版easywarp V3.20
